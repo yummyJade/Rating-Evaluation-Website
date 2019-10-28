@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" href="../resources/css/init.css">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/infoform.css">
+</head>
+<body>
+<div class="container">
+    <div class="containerIn">
+
+
+        <h1>职业调查分析</h1>
+        <p class="description">
+            本次测试基于霍兰德职业兴趣测试，可作参考
+        </p>
+        <div class="ProgressBarWrap">
+            <div class="ProgressBar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <form action="/calcuServlet">
+            <div class="questionWrap">
+                <div class="question">
+                    <div class="questionTitle">
+                        <strong>第一题</strong>
+                        你猜啊
+                    </div>
+                    <ul>
+                        <li class="questionInfo"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <button>提交</button>
+        </form>
+
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="../resources/js/infoform.js"></script>
+</body>
+</html>

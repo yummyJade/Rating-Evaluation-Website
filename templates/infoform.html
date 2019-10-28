@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" href="/static/css/init.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/infoform.css">
+</head>
+<style>
+    .box1:before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -100px;
+        margin-top: -15px;
+        width: 20px;
+        height: 20px;
+        border-left: 10px solid black;
+        border-top: 10px solid black;
+        transform: rotate(-45deg);
+        border-color: black;
+
+    }
+
+    .box1:hover::before{
+        left: -10px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="containerIn">
+            <div class="box1" style="width: 400px;height: 50px;background-color: red;position: relative;margin-left: 100px;"></div>
+            
+            <h1>职业调查分析</h1>
+            <p class="description">
+                <!-- 本次测试基于mbit职业兴趣测试，可作参考 -->
+            </p>
+            <div class="ProgressBarWrap">
+                <div class="ProgressBar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <form action="/evaluate/calcuNaire">
+                <!-- 记录是哪一种问卷类型 -->
+                <input class="input" name="qtype" type="text" value="1" hidden="true">
+                <div class="questionWrap">
+                    <div class="question">
+                        <div class="questionTitle">
+                            <strong>第一题</strong>
+                            你猜啊
+                        </div>
+                        <ul>
+                            <li class="questionInfo"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="submitBtn" type="submit">提交</button>
+            </form>
+
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/static/js/infoform.js"></script>
+</body>
+</html>

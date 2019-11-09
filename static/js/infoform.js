@@ -130,7 +130,7 @@ function init(){
                         // console.log(questions[i].options[j])
                         strInside +=`
                             <li class="questionInfo">
-                                <input type="radio" value="${j}" name="option">
+                                <input type="radio" value="${j+1}" name="${i}">
                                 ${questions[i].options[j]}
                             </li>
                         `

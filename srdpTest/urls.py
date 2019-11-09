@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.hello),
     path('mainfun/', views.mainfun),
-    path('evaluate/', include('evaluation.urls'))
+    path('evaluate/', include('evaluation.urls')),
+    path('recommendJob/', views.recommendJob),
     # path('', views.index, name="index"),
 ]

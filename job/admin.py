@@ -8,7 +8,8 @@ class NumAndTypeAdmin(admin.ModelAdmin):
 
 
 class JobScoreAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'htype1', 'htype2', 'htype3', 'htype4', 'htype5', 'htype6')
+    list_display = ('id', 'name', 'htype1', 'htype2', 'htype3', 'htype4', 'htype5', 'htype6',  'valtype1', 'valtype2', 'valtype3', 'valtype4', 'valtype5', 'valtype6', 'valtype7',
+                    'valtype8', 'valtype9', 'valtype10', 'valtype11', 'valtype12', 'valtype13')
 
 
 class JobScore2Admin(admin.ModelAdmin):

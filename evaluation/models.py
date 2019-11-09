@@ -61,15 +61,55 @@ class QuestionOption(models.Model):
 #         def __str__(self):
 #             return self.name
 
+
 # 问卷结果
 class QuestionResult(models.Model):
     userId = models.CharField(verbose_name='用户标识', max_length=30)
     qtype = models.CharField(verbose_name='问卷类型', max_length=20)
-    value = models.CharField(verbose_name='选项的值', max_length=1, default=1)
-    type = models.CharField(verbose_name='类型', max_length=20, default='无')
+    value = models.IntegerField(verbose_name='选项的值', default=1)
+    type = models.IntegerField(verbose_name='类型')
 
     class Meta:
         verbose_name = '结果'
+        verbose_name_plural = verbose_name
+
+        def __str__(self):
+            return self.name
+
+
+# 问卷结果返回的值
+class QuestionResultOne(models.Model):
+    qtype = models.CharField(verbose_name='问卷类型', max_length=20)
+    type = models.IntegerField(verbose_name='类型')
+    des1 = models.TextField(verbose_name='结果描述1',default="")
+    des2 = models.TextField(verbose_name='结果描述2', default="")
+
+
+    class Meta:
+        verbose_name = '结果返回'
+        verbose_name_plural = verbose_name
+
+        def __str__(self):
+            return self.name
+
+# 问卷结果返回的值
+# 类型	特征	  对组织的贡献	领导模式	  学习模式	倾向性顺序	解决问题模式	工作环境倾向性	潜在缺点	发展建议
+
+class QuestionResultTwo(models.Model):
+    # qtype = models.CharField(verbose_name='问卷类型', max_length=20)
+    type = models.CharField(verbose_name='类型', max_length=4)
+    feature = models.TextField(verbose_name='特征', default="")
+    contri = models.TextField(verbose_name='对组织的贡献', default="")
+    leaderP = models.TextField(verbose_name='领导模式', default="")
+    studyP = models.TextField(verbose_name='学习模式', default="")
+    trend = models.TextField(verbose_name='倾向性顺序', default="")
+    solveP = models.TextField(verbose_name='解决问题模式', default="")
+    workE = models.TextField(verbose_name='工作环境倾向性', default="")
+    weakness =  models.TextField(verbose_name='潜在缺点', default="")
+    suggest = models.TextField(verbose_name='潜在缺点发展建议', default="")
+
+    class Meta:
+        verbose_name = '结果返回'
         verbose_name_plural = verbose_name
 
         def __str__(self):

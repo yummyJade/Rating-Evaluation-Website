@@ -33,6 +33,20 @@ class JobScore(models.Model):
     htype5 = models.IntegerField(verbose_name='社会型')
     htype6 = models.IntegerField(verbose_name='艺术型')
 
+    valtype1 = models.IntegerField(verbose_name='利他主义', default=0)
+    valtype2 = models.IntegerField(verbose_name='美感', default=0)
+    valtype3 = models.IntegerField(verbose_name='智力挑战', default=0)
+    valtype4 = models.IntegerField(verbose_name='成就感', default=0)
+    valtype5 = models.IntegerField(verbose_name='自主', default=0)
+    valtype6 = models.IntegerField(verbose_name='社会地位', default=0)
+    valtype7 = models.IntegerField(verbose_name='管理', default=0)
+    valtype8 = models.IntegerField(verbose_name='经济报酬', default=0)
+    valtype9 = models.IntegerField(verbose_name='社会交际', default=0)
+    valtype10 = models.IntegerField(verbose_name='安全感', default=0)
+    valtype11 = models.IntegerField(verbose_name='舒适', default=0)
+    valtype12 = models.IntegerField(verbose_name='团队', default=0)
+    valtype13 = models.IntegerField(verbose_name='新奇', default=0)
+
     class Meta:
         verbose_name = '职业打分'
         verbose_name_plural = verbose_name

@@ -87,12 +87,12 @@ function GetRequest() {
 
 //数据初始化
 function init(){
-     
+    // console.log("ssss")
     let type = GetRequest();
     console.log(type.type);
     $.ajax({
         type: "GET",
-        url: "http://127.0.0.1:8000/evaluate/getNaire",
+        url: "http://127.0.0.1:8000/jobEval/evaluate/getNaire",
         data: {
             'type':type.type
 

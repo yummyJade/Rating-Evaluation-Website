@@ -80,3 +80,35 @@ class Jobscore2(models.Model):
             return self.name
 
 
+# 就业指导
+
+class CareerGuide(models.Model):
+    title = models.CharField(verbose_name='标题', default="", max_length=30)
+    content = models.TextField(verbose_name='内容', default="")
+
+    class Meta:
+        verbose_name = '就业指导'
+        verbose_name_plural = verbose_name
+
+        def __str__(self):
+            return self.name
+
+
+# 招聘信息
+class recruitInfo(models.Model):
+    jobname = models.CharField(verbose_name='职业名称', max_length=20)
+    salary = models.IntegerField(verbose_name='工资')
+    company = models.CharField(verbose_name='公司', max_length=30)
+    educationB = models.CharField(verbose_name='学历', max_length=20)
+    worktime = models.CharField(verbose_name='工作时长', max_length=20)
+    recruitNum = models.CharField(verbose_name='招聘人数', max_length=10)
+    zone = models.CharField(verbose_name='地区', max_length=20)
+    old = models.CharField(verbose_name='年龄', max_length=10)
+
+    class Meta:
+        verbose_name = '招聘信息'
+        verbose_name_plural = verbose_name
+
+        def __str__(self):
+            return self.name
+

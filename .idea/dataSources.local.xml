@@ -4,7 +4,16 @@
     <data-source name="db" uuid="f008ead5-462e-461f-8998-4517cf587ae9">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
       <auth-required>false</auth-required>
-      <introspection-schemas>*:</introspection-schemas>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="" />
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="Django default" uuid="377b0482-9262-4324-bfb7-a898601cf795">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>yuyuan</user-name>
+      <schema-mapping />
     </data-source>
   </component>
 </project>

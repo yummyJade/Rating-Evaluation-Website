@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>职业推荐结果</title>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	li{
+		list-style: none;
+	}
+	.title{
+		text-align: center;
+		margin-top: 40px;
+	}
+	.result-wrap{
+		width: 600px;
+		margin:0 auto;
+	}
+	.type span{
+		font-weight: 600;
+	}
+</style>
+<body>
+	<div class="container">
+		<h1 class="title">推荐结果</h1>
+		<div class="result-wrap">
+			<ul>
+                {% if status == 1 %}
+                    <div>结合两项调查，我们的推荐是：</div>
+                    <!-- <li class="result-item">
+                        <div class="type"><span>类型:</span>管理型</div>
+                        <div class="des1">追求权力、权威和物质财富，具有领导才能。喜欢竞争、敢冒风险、有野心、抱负。为人务实，习惯以利益得失，权利、地位、金钱等来衡量做事的价值，做事有较强的目的性</div>
+                        <div class="des2">
+                            喜欢要求具备经营、管理、劝服、监督和领导才能，以实现机构、政治、社会及经济目标的工作，并具备相应的能力。如项目经理、销售人员，营销管理人员、政府官员、企业领导、法官、律师
+                        </div>
+                    </li> -->
+                    {% for x in data %}
+                    <li class="result-item">
+                        <div class="type"><span>工作:{{ x.name }}</span></div>
+                        <div class="des1"></div>
+
+                    </li>
+                    {% endfor %}
+                {% else %}
+
+                    <div>{{ message }}</div>
+
+                {% endif %}
+
+
+			</ul>
+
+		</div>
+
+	</div>
+</body>
+</html>

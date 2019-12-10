@@ -15,13 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from evaluation import views
+from evaluation import views as evalView
+from users import views as userView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('index/', views.hello),
-    path('mainfun/', views.mainfun),
-    path('evaluate/', include('evaluation.urls')),
-    path('recommendJob/', views.recommendJob),
+    path('jobEval/admin/', admin.site.urls),
+    path('jobEval/index/', evalView.hello),
+    path('jobEval/mainfun/', evalView.mainfun),
+    path('jobEval/evaluate/', include('evaluation.urls')),
+    path('jobEval/job/', include('job.urls')),
+    path('jobEval/recommendJob/', evalView.recommendJob),
+    path('jobEval/user/', include('users.urls')),
+    path('jobEval/login/', userView.loginShow),
+    path('jobEval/regist/', userView.registShow),
+    path('jobEval/logout/', userView.logout)
+
     # path('', views.index, name="index"),
 ]
+
+urlpatterns += staticfiles_urlpatterns()

@@ -29,6 +29,12 @@
 	<!--//web font-->
 
 </head>
+<style>
+	
+	.mt-2, .my-2{
+		margin-top: 1.5rem !important;
+	}
+</style>
 
 <body>
 
@@ -51,20 +57,10 @@
 							<li class="mr-lg-3 mr-2"><a href="../index">Home</a></li>
 
 							<li class="mr-lg-3 mr-2 active"><a href="../mainfun">Services</a></li>
+                            <li class="mr-lg-3 mr-2 "><a href="../job/jobList"  target="_blank">jobList</a></li>
+                            <li class="mr-lg-3 mr-2"><a href="../recommendJob">Result</a></li>
 							<li class="mr-lg-3 mr-2"><a href="../about">About</a></li>
-							<!--<li class="mr-lg-3 mr-2 p-0">-->
-							<!--&lt;!&ndash; First Tier Drop Down &ndash;&gt;-->
-							<!--<label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span> </label>-->
-							<!--<a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>-->
-							<!--<input type="checkbox" id="drop-2"/>-->
-							<!--<ul class="inner-dropdown">-->
-								<!--<li><a href="index.html">What We Do</a></li>-->
-								<!--<li><a href="index.html">Team Members</a></li>-->
-								<!--<li><a href="#blog">Blog Posts</a></li>-->
-								<!--<li><a href="index.html">Stats</a></li>-->
-							<!--</ul>-->
-							<!--</li>-->
-							<!--<li><a href="projects.html">Projects</a></li>-->
+
 						</ul>
 				</nav>
 			</div>
@@ -101,7 +97,7 @@
 		<h3 class="heading mb-5">Our Services</h3>
 		<div class="row text-center">
 			<div class="col-lg-4 col-md-6 how-icon">
-				<a href="infoform.html" target="_blank">
+				<!-- <a href="infoform.html" target="_blank"> -->
 					<div class="shadow  box1">
 						<div class="grid1-bg" >
 						</div>
@@ -111,7 +107,7 @@
 							<p class="mt-3">帮你更好的了解自己</p>
 						</div>
 					</div>
-				</a>
+				<!-- </a> -->
 
 			</div>
 			<div class="col-lg-4 col-md-6 how-icon1 mt-md-0 mt-4">
@@ -168,19 +164,19 @@
 		<div class="row">
 			<div class="col-lg-4 col-md-6">
 				<img src="/static/images/blog1.jpg" class="img-fluid" alt="Blog Post1">
-				<h4 class="my-3"><a href="../evaluate/naire?type=2">职业人格测试</a></h4>
+				<h4 class="my-3"><a href="../evaluate/naire?type=2" target="_blank">职业人格测试</a></h4>
 				<p>走向成功第一步</p>
 				<p class="mt-1"><span class="fa fa-calendar" aria-hidden="true"></span> 13 Dec 2019</p>
 			</div>
 			<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
 				<img src="/static/images/blog2.jpg" class="img-fluid" alt="Blog Post1">
-				<h4 class="my-3"><a href="../evaluate/naire?type=1">职业兴趣测试</a></h4>
+				<h4 class="my-3"><a href="../evaluate/naire?type=1" target="_blank">职业兴趣测试</a></h4>
 				<p>走向成功第二步</p>
 				<p class="mt-1"><span class="fa fa-calendar" aria-hidden="true"></span> 14 Dec 2019</p>
 			</div>
 			<div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
 				<img src="/static/images/blog3.jpg" class="img-fluid" alt="Blog Post1">
-				<h4 class="my-3"><a href="../evaluate/naire?type=3">职业价值观测试</a></h4>
+				<h4 class="my-3"><a href="../evaluate/naire?type=3" target="_blank">职业价值观测试</a></h4>
 				<p>走向成功第三布</p>
 				<p class="mt-1"><span class="fa fa-calendar" aria-hidden="true"></span> 15 Dec 2019</p>
 			</div>
@@ -200,11 +196,11 @@
 			</div>
 			<div class="col-lg-6 grid1 mt-lg-0 mt-4 pl-lg-5">
 				<h3 class="my-3">【轻松面试 快乐人生】<span ><a href="" class="getMore">获得更多>></a></span></h3>
-				<h5 class="mt-md-4 mt-3 mb-2 how-icon">【求职指南】16个经典面试问题回答规律</h5>
-				<p>Integer pulvinar leo id viverra feugiat. Pellentesque libero justo, semper at tempus vel, ultrices in ligula.</p>
-				<h5 class="my-2 how-icon1"> 【求职指南】16个经典面试问题回答规律</h5>
-				<p>Integer pulvinar leo id viverra feugiat. Pellentesque libero justo, semper at tempus vel, ultrices in ligula. Nulla
-					sollicit.</p>
+{#				<h5 class="mt-md-4 mt-3 mb-2 how-icon">【求职指南】在个人简历上营造“三大亮点”顺利赢得每个面试机会</h5>#}
+				<!-- <p>Integer pulvinar leo id viverra feugiat. Pellentesque libero justo, semper at tempus vel, ultrices in ligula.</p> -->
+                {% for x in data %}
+                    <h5 class="my-2 how-icon1"><a href="../job/careerGuide?id={{ x.id }}">【求职指南】{{x.title}} </a></h5>
+                {% endfor %}
 			</div>
 		</div>
 	</div>
@@ -212,72 +208,68 @@
 <!-- how it works -->
 
 <!-- testimonials -->
-<section class="clients py-5" id="testi">
-	<div class="container py-xl-5 py-lg-3">
-		<div class="row pb-4">
-			<div class="col-lg-6 about-left">
-				<h3 class="heading mb-4">招聘指南</h3>
-				<p class="mb-3">帮你更快的找到工作</p>
-			</div>
-			<div class="col-lg-6 csslider infinity" id="slider1">
-				<input type="radio" name="slides" checked="checked" id="slides_1" />
-				<input type="radio" name="slides" id="slides_2" />
-				<input type="radio" name="slides" id="slides_3" />
-				<input type="radio" name="slides" id="slides_4" />
-				<ul class="banner_slide_bg">
-					<li>
-						<div class="feedback-top">
-							<p><span class="fa fa-quote-left"></span> Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod.
-								sed do eiusmod tempor
-								incididunt
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris nisi.</p>
-				
-						</div>
-					</li>
-					<li>
-						<div class="feedback-top">
-							<p><span class="fa fa-quote-left"></span> Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod.
-								sed do eiusmod tempor
-								incididunt
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris nisi.</p>
-
-						</div>
-					</li>
-					<li>
-						<div class="feedback-top">
-							<p><span class="fa fa-quote-left"></span> Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod.
-								sed do eiusmod tempor
-								incididunt
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris nisi.</p>
-		
-						</div>
-					</li>
-					<li>
-						<div class="feedback-top">
-							<p><span class="fa fa-quote-left"></span> Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod.
-								sed do eiusmod tempor
-								incididunt
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris nisi.</p>
-	
-						</div>
-					</li>
-				</ul>
-				<div class="navigation">
-					<div>
-						<label for="slides_1"></label>
-						<label for="slides_2"></label>
-						<label for="slides_3"></label>
-						<label for="slides_4"></label>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+{#<section class="clients py-5" id="testi">#}
+{#	<div class="container py-xl-5 py-lg-3">#}
+{#		<div class="row pb-4">#}
+{#			<div class="col-lg-6 about-left">#}
+{#				<h3 class="heading mb-4">招聘指南</h3>#}
+{#				<p class="mb-3">帮你更快的找到工作</p>#}
+{#			</div>#}
+{#			<div class="col-lg-6 csslider infinity" id="slider1">#}
+{#				<input type="radio" name="slides" checked="checked" id="slides_1" />#}
+{#				<input type="radio" name="slides" id="slides_2" />#}
+{#				<input type="radio" name="slides" id="slides_3" />#}
+{#				<input type="radio" name="slides" id="slides_4" />#}
+{#				<ul class="banner_slide_bg">#}
+{#					<li>#}
+{#						<div class="feedback-top">#}
+{#							<p><span>船体应届毕业生 3000 福建华东船厂有限公司 福建-福州市</span></p>#}
+{#				#}
+{#						</div>#}
+{#					</li>#}
+{#					<li>#}
+{#						<div class="feedback-top">#}
+{#							<p><span class="fa fa-quote-left"></span> Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod.#}
+{#								sed do eiusmod tempor#}
+{#								incididunt#}
+{#								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud#}
+{#								exercitation ullamco laboris nisi.</p>#}
+{##}
+{#						</div>#}
+{#					</li>#}
+{#					<li>#}
+{#						<div class="feedback-top">#}
+{#							<p><span class="fa fa-quote-left"></span> Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod.#}
+{#								sed do eiusmod tempor#}
+{#								incididunt#}
+{#								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud#}
+{#								exercitation ullamco laboris nisi.</p>#}
+{#		#}
+{#						</div>#}
+{#					</li>#}
+{#					<li>#}
+{#						<div class="feedback-top">#}
+{#							<p><span class="fa fa-quote-left"></span> Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod.#}
+{#								sed do eiusmod tempor#}
+{#								incididunt#}
+{#								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud#}
+{#								exercitation ullamco laboris nisi.</p>#}
+{#	#}
+{#						</div>#}
+{#					</li>#}
+{#				</ul>#}
+{#				<div class="navigation">#}
+{#					<div>#}
+{#						<label for="slides_1"></label>#}
+{#						<label for="slides_2"></label>#}
+{#						<label for="slides_3"></label>#}
+{#						<label for="slides_4"></label>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#	</div>#}
+{#</section>#}
 		
 <!-- brands -->
 <section class="brands py-5" id="brands">

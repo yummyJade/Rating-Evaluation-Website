@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>职业价值观测评结果</title>
+    
+    <!-- 引入 ECharts 文件 -->
+    <!-- <script src="https://github.com/apache/incubator-echarts/blob/4.4.0/dist/echarts.min.js"></script> -->
+    <script src="https://cdn.staticfile.org/echarts/4.4.0-rc.1/echarts.min.js"></script>
+</head>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    li{
+        list-style:none;
+    }
+    .title{
+        text-align: center;
+        margin-top: 40px;
+    }
+    #main{
+        margin:0 auto;
+    }
+    .result-wrap{
+        width: 980px;
+        margin:0 auto;
+        margin-top: 50px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 class="title">测评结果</h1>
+        <div id="main" style="width: 600px;height:400px;"></div>
+        <div class="result-wrap">
+            <ul>
+                
+        <!--         <li class="result-item">
+                    <div class="type"><span>类型:</span>管理型</div>
+                    <div class="des1">追求权力、权威和物质财富，具有领导才能。喜欢竞争、敢冒风险、有野心、抱负。为人务实，习惯以利益得失，权利、地位、金钱等来衡量做事的价值，做事有较强的目的性</div>
+                    <div class="des2">
+                        喜欢要求具备经营、管理、劝服、监督和领导才能，以实现机构、政治、社会及经济目标的工作，并具备相应的能力。如项目经理、销售人员，营销管理人员、政府官员、企业领导、法官、律师
+                    </div>
+                </li> -->
+            
+            </ul>
+            
+        </div>
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+        
+
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        //骚操作部分，不要学我
+
+        let data1 = {{ data1|safe }};
+        let data2 = {{ data2|safe }};
+        let sum = {{sum|safe}};
+
+        
+        // app.title = '坐标轴刻度与标签对齐';
+        let myChart = echarts.init(document.getElementById('main'));
+        let option = {
+            color: ['#3398DB'],
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ["利他主义", "美感", "智力挑战", "成就感", "自主", "社会地位", "管理", "经济报酬", "社会交际", "安全感", "舒适", "团队", "新奇"],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'直接访问',
+                    type:'bar',
+                    barWidth: '60%',
+                    data:data2
+                }
+            ]
+        };
+         myChart.setOption(option);
+            // console.log(data1)
+         //再处理一下字符数据
+         let str = "";
+         for(let i = 0, len = data1.length; i < len; i++){
+            str +=  `
+                    <li class="result-item">
+                    <div class="type">${ data1[i]["type"] }</div>
+                    <div class="des1">${ data1[i]["des1"] }</div>
+                    <div class="des2">
+                       
+                    </div>
+                </li>
+
+                `
+
+         }
+         $(".result-wrap ul li").remove();
+         $(".result-wrap ul").append(str);
+
+           // console.log(str)
+
+    </script>
+</body>
+</html>
+
+

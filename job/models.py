@@ -4,17 +4,17 @@ from django.db import models
 
 
 # 关于职业类型的几种分类及对照
-class NumAndType(models.Model):
-    num = models.IntegerField(verbose_name='编号')
-    name = models.CharField(verbose_name='类名', max_length=20)
-    type = models.CharField(verbose_name='类型', max_length=20, default='')
-
-    class Meta:
-        verbose_name = '分类'
-        verbose_name_plural = verbose_name
-
-        def __str__(self):
-            return self.name
+# class NumAndType(models.Model):
+#     num = models.IntegerField(verbose_name='编号')
+#     name = models.CharField(verbose_name='类名', max_length=20)
+#     type = models.CharField(verbose_name='类型', max_length=20)
+#
+#     class Meta:
+#         verbose_name = '分类'
+#         verbose_name_plural = verbose_name
+#
+#         def __str__(self):
+#             return self.name
 
 # 关于职业价值观测试的几种分类
 # 利他主义	美感	智力	成就感	自主	社会地位	管理	经济报酬	社会交际	安全稳定	舒适	团队	新奇

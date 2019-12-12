@@ -12,7 +12,7 @@ def registShow(request):
 
 
 def loginShow(request):
-    if request.session.get('user_id', default=None) != '':
+    if request.session.get('user_id', default='') != '':
         return render(request, 'index.html')
     else:
 

@@ -67,7 +67,7 @@ class QuestionResult(models.Model):
     userId = models.CharField(verbose_name='用户标识', max_length=30)
     qtype = models.CharField(verbose_name='问卷类型', max_length=20)
     value = models.IntegerField(verbose_name='选项的值', default=1)
-    type = models.IntegerField(verbose_name='类型')
+    type = models.IntegerField(verbose_name='类型', default=0)
 
     class Meta:
         verbose_name = '结果'
@@ -80,7 +80,7 @@ class QuestionResult(models.Model):
 # 问卷结果返回的值
 class QuestionResultOne(models.Model):
     qtype = models.CharField(verbose_name='问卷类型', max_length=20)
-    type = models.IntegerField(verbose_name='类型')
+    type = models.IntegerField(verbose_name='类型', default=0)
     des1 = models.TextField(verbose_name='结果描述1',default="")
     des2 = models.TextField(verbose_name='结果描述2', default="")
 

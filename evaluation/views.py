@@ -10,6 +10,12 @@ from evaluation import models
 # 欢迎页
 
 
+def test(request):
+    # start_response('200 OK', [('Content-Type','text/html')])
+    # #return ["Hello World"] # python2
+    # return [b"Hello World"] # python3
+    return HttpResponse("hello world")
+
 
 def hello(request):
     # print("在这里")
@@ -322,7 +328,7 @@ def calcuNaire(request):
     elif type == '2':
         all_question = models.QuestionTitle.objects.filter(qtype='Hollander')
         type_map = []
-        JobType = {"常规型": 1, "现实性": 2, "研究型": 3, "管理型": 4, "社会型": 5, "艺术型": 6}
+        JobType = {"常规型": 1, "现实型": 2, "研究型": 3, "管理型": 4, "社会型": 5, "艺术型": 6}
         for i in all_question:
             type_map.append(i.otype)
 

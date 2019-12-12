@@ -22,6 +22,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
+
     path('jobEval/admin/', admin.site.urls),
     path('jobEval/index/', evalView.hello),
     path('jobEval/mainfun/', evalView.mainfun),
@@ -31,7 +32,8 @@ urlpatterns = [
     path('jobEval/user/', include('users.urls')),
     path('jobEval/login/', userView.loginShow),
     path('jobEval/regist/', userView.registShow),
-    path('jobEval/logout/', userView.logout)
+    path('jobEval/logout/', userView.logout),
+    path('jobEval/test/', evalView.test)
 
     # path('', views.index, name="index"),
 ]

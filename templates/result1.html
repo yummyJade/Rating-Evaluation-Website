@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>职业兴趣测试</title>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	li{
+		list-style: none;
+	}
+	.title{
+		text-align: center;
+		margin-top: 40px;
+	}
+	.result-wrap{
+		width: 1200px;
+		margin:0 auto;
+	}
+	.result-item div span {
+		font-weight: 600;
+	}
+	.type span{
+		font-weight: 600;
+	}
+</style>
+<body>
+	<div class="container">
+		<h1 class="title">测评结果</h1>
+		<div class="result-wrap">
+			<ul>
+{#                {% for x in data %}#}
+				<li class="result-item">
+					<div class="type"><span>类型:</span>{{ data.type }}</div>
+					<div class="feature">
+						<span>特征:</span>
+						{{ data.feature }}
+					</div>
+					<div class="contri">
+						<span>对组织的贡献:</span>
+						{{ data.contri }}
+					</div>
+					<div class="leaderP">
+						<span>领导模式:</span>
+						{{ data.leaderP }}
+					</div>
+					<div class="studyP">
+						<span>学习模式:</span>
+						{{ data.studyP }}
+					</div>
+					<div class="trend">
+						<span>倾向性顺序:</span>
+						{{ data.trend }}
+					</div>
+					<div class="solveP">
+						<span>解决问题模式:</span>
+						{{ data.solveP }}
+					</div>
+					<div class="workE">
+						<span>工作环境倾向性:</span>
+						{{ data.workE }}
+					</div>
+					<div class="weekness">
+						<span>潜在缺点:</span>
+                        {{ data.weakness }}
+					</div>
+					<div class="suggest">
+						<span>发展建议:</span>
+                        {{ data.suggest }}
+					</div>
+{#					{% endfor %}#}
+				</li>
+			</ul>
+			
+		</div>
+
+	</div>
+</body>
+</html>

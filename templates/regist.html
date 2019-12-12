@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+	<link rel="stylesheet" href="https://chen-1258450093.cos.ap-beijing.myqcloud.com/jobEval/utils/layui/css/layui.css">
+</head>
+<style>
+	*{
+		padding: 0;
+		margin:0;
+	}
+	.container{
+
+	}
+	.mainer{
+		width: 400px;
+		padding: 0 50px 0 50px;
+		margin: 0px auto;
+		margin-top: 50px;
+	}
+	h1{
+		text-align: center;
+		margin-top: 50px;
+	}
+	a{
+		margin-left: 110px;
+		text-decoration: underline;
+	}
+</style>
+<body>
+
+	<div class="container">
+		<h1>用户注册</h1>
+		<div class="mainer">
+			<form class="layui-form" action="">
+			  <div class="layui-form-item">
+			    <label class="layui-form-label">用户名</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+			    </div>
+			  </div>
+			  <div class="layui-form-item">
+			    <label class="layui-form-label">密码</label>
+			    <div class="layui-input-block">
+			      <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+			    </div>
+			    <!-- <div class="layui-form-mid layui-word-aux">辅助文字</div> -->
+			  </div>
+			  <div class="layui-form-item">
+			    <label class="layui-form-label">密码</label>
+			    <div class="layui-input-block">
+			      <input type="password" name="againPassword" required lay-verify="required" placeholder="请再次输入密码" autocomplete="off" class="layui-input">
+			    </div>
+			    <!-- <div class="layui-form-mid layui-word-aux">请再次输入密码</div> -->
+			  </div>
+
+			  <div class="layui-form-item">
+			 		<a href="../login">已经有账号？快去登录</a>
+			 	</div>
+			 
+			  <div class="layui-form-item">
+			    <div class="layui-input-block">
+			      <button class="layui-btn" lay-submit lay-filter="formDemo">注册</button>
+		
+			    </div>
+			  </div>
+			</form>
+
+		</div>
+		
+
+	</div>
+	
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>  
+<script src="https://chen-1258450093.cos.ap-beijing.myqcloud.com/jobEval/utils/layui/layui.all.js"></script>
+<script>
+//Demo
+layui.use('form', function(){
+  var form = layui.form;
+  
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    // layer.msg(JSON.stringify(data.field));
+
+	$.ajax({
+		url:'../user/regist/',
+		method:'POST',
+		data:JSON.stringify(data.field),
+		success:function(res){
+			if(res.status == 1) {
+				layer.msg("注册成功！");
+			}else{
+				layer.msg("注册失败，请重试");
+			}
+		}
+	})
+    return false;
+  });
+});
+</script>
+</body>
+</html>

@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import NumAndType, JobScore, Jobscore2, CareerGuide, recruitInfo
+from .models import  JobScore, Jobscore2, CareerGuide, recruitInfo
 
 
 # Register your models here.
-class NumAndTypeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'num', 'name', 'type')
+# class NumAndTypeAdmin(admin.ModelAdmin):
+#     list_display = ('id', 'num', 'name', 'type')
 
 
 class JobScoreAdmin(admin.ModelAdmin):
@@ -23,7 +23,7 @@ class CareerGuideAdmin(admin.ModelAdmin):
 class recruitInfoAdmin(admin.ModelAdmin):
     list_display = ('id', 'jobname', 'salary', 'company', 'educationB', 'worktime', 'recruitNum', 'zone', 'old')
 
-admin.site.register(NumAndType, NumAndTypeAdmin)
+# admin.site.register(NumAndType, NumAndTypeAdmin)
 admin.site.register(JobScore, JobScoreAdmin)
 admin.site.register(Jobscore2, JobScore2Admin)
 admin.site.register(CareerGuide, CareerGuideAdmin)

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>招聘信息</title>
+	<link rel="stylesheet" href="https://qidian.gtimg.com/lulu/theme/peak/css/common/ui/Table.css">
+	<link rel="stylesheet" href="https://qidian.gtimg.com/lulu/theme/peak/css/common/comp/Table.css">
+	<link rel="stylesheet" href="https://qidian.gtimg.com/lulu/theme/peak/css/common/ui.css">
+</head>
+<style>
+	.container{
+		width: 1200px;
+		margin: 0 auto;
+	}
+	h1{
+		text-align: center;
+	}
+</style>
+<body>
+	<div class="container">
+		<h1>招聘信息</h1>
+		<div class="luluTable">
+			<div class="table-x">
+			    <div class="table-size">
+			        <table class="ui-table">
+			          <tr>
+			            <th scope="col">职业名称</th>
+			            <th scope="col">工资</th>
+			            <th scope="col">公司</th>
+			            <th scope="col">学历</th>
+			            <th scope="col">工作经验(时长)</th>
+			            <th scope="col">招聘人数</th>
+			            <th scope="col">地区</th>
+			            <th scope="col">年龄</th>
+			          </tr>
+			          <tbody>
+			          	<tr>
+				          	<td>路基路面设计员</td>
+				          	<td>2000</td>
+				          	<td>陕西交科工程技术咨询..</td>
+				          	<td>大专</td>
+				          	<td>1</td>
+				          	<td>3</td>
+				          	<td>福州</td>
+				          	<td>不限</td>
+						</tr>
+                        {% for x in data %}
+                            <tr>
+                                <td>{{ x.jobname }}</td>
+                                <td>{{ x.salary }}</td>
+                                <td>{{ x.company }}</td>
+                                <td>{{ x.educationB }}</td>
+                                <td>{{ x.worktime }}</td>
+                                <td>{{ x.recruitNum }}</td>
+                                <td>{{ x.zone }}</td>
+                                <td>{{ x.age }}</td>
+                            </tr>
+                        {% endfor %}
+
+{#						<tr>#}
+{#				          	<td>设计员（三亚市）</td>#}
+{#				          	<td>1000</td>#}
+{#				          	<td>三亚欣城电力设计工程..</td>#}
+{#				          	<td>大专</td>#}
+{#				          	<td>1</td>#}
+{#				          	<td>10</td>#}
+{#				          	<td>海南-三亚</td>#}
+{#				          	<td>不限</td>#}
+{#						</tr>#}
+{#						<tr>#}
+{#				          	<td>结构助理工程师</td>#}
+{#				          	<td>5000</td>#}
+{#				          	<td>富基电子（深圳）有限..</td>#}
+{#				          	<td>不限</td>#}
+{#				          	<td>1</td>#}
+{#				          	<td>10</td>#}
+{#				          	<td>深圳</td>#}
+{#				          	<td>不限</td>#}
+{#						</tr>#}
+{#						<tr>#}
+{#				          	<td>安全/环境工程师</td>#}
+{#				          	<td>10000</td>#}
+{#				          	<td>江苏申源集团有限公司</td>#}
+{#				          	<td>大专</td>#}
+{#				          	<td>1</td>#}
+{#				          	<td>20</td>#}
+{#				          	<td>江苏</td>#}
+{#				          	<td>不限</td>#}
+{#						</tr>#}
+			          </tbody>
+			         </table>
+{#			         <div class="table-null-x">#}
+{#			            <div class="table-null">暂无数据</div>#}
+{#			         </div>#}
+			     </div>
+			     <!-- 底部分页 -->
+			     <div class="table-page-x">
+			        <div class="table-page"></div>
+			     </div>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://qidian.gtimg.com/lulu/theme/peak/js/plugin/jquery.js"></script>
+	<script src="https://qidian.gtimg.com/lulu/theme/peak/js/common/all.js"></script>
+</body>
+</html>

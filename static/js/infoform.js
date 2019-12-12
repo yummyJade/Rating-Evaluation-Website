@@ -92,7 +92,7 @@ function init(){
     console.log(type.type);
     $.ajax({
         type: "GET",
-        url: "http://127.0.0.1:8000/jobEval/evaluate/getNaire",
+        url: "/jobEval/evaluate/getNaire",
         data: {
             'type':type.type
 

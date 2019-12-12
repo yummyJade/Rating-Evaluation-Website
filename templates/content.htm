@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>就业指导内容</title>
+</head>
+<style>
+	
+	h1{
+		text-align: center;
+	}
+	.innerContain{
+		width: 1200px;
+		margin:0 auto;
+	}
+</style>
+<body>
+{% for x in data %}
+	<div class="container">
+		<h1>{{ x.title }}</h1>
+		<div class="innerContain">
+			{{ x.content }}
+		</div>
+	</div>
+{% endfor %}
+</body>
+</html>
